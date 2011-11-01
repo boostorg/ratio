@@ -242,7 +242,12 @@ namespace ratio_detail
              >
          >::type type;
   };
-
+  template <class R>
+  struct ratio_add<R, ratio<0> >
+  {
+    typedef R type;
+  };
+   
   template <class R1, class R2>
   struct ratio_subtract
   {
@@ -268,7 +273,13 @@ namespace ratio_detail
              >
          >::type type;
   };
-
+  
+  template <class R>
+  struct ratio_subtract<R, ratio<0> >
+  {
+    typedef R type;
+  };
+  
   template <class R1, class R2>
   struct ratio_multiply
   {
@@ -299,6 +310,17 @@ namespace ratio_detail
              boost::ratio_detail::br_mul<R1::num / gcd_n1_n2, R2::den / gcd_d1_d2>::value,
              boost::ratio_detail::br_mul<R2::num / gcd_n1_n2, R1::den / gcd_d1_d2>::value
          >::type type;
+  };
+  template <class R1, class R2>
+  struct is_evenly_divisible_by
+  {
+  private:
+      static const boost::intmax_t gcd_n1_n2 = mpl::gcd_c<boost::intmax_t, R1::num, R2::num>::value;
+      static const boost::intmax_t gcd_d1_d2 = mpl::gcd_c<boost::intmax_t, R1::den, R2::den>::value;
+  public:
+      typedef integral_constant<bool,
+             ((R2::num / gcd_n1_n2 ==1) && (R1::den / gcd_d1_d2)==1)
+      > type;
   };
   
   template <class T>
