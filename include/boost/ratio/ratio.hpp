@@ -128,7 +128,11 @@ const    boost::intmax_t ratio<N, D>::den;
 
 //----------------------------------------------------------------------------//
 //                                                                            //
+<<<<<<< HEAD
 //                20.6.2 Arithmetic on ratio types [ratio.arithmetic]                   //
+=======
+//                20.6.2 Arithmetic on ratio types [ratio.arithmetic]         //
+>>>>>>> develop
 //                                                                            //
 //----------------------------------------------------------------------------//
 
@@ -158,7 +162,11 @@ struct ratio_divide
 
 //----------------------------------------------------------------------------//
 //                                                                            //
+<<<<<<< HEAD
 //                20.6.3 Comparasion of ratio types [ratio.comparison]                   //
+=======
+//                20.6.3 Comparision of ratio types [ratio.comparison]        //
+>>>>>>> develop
 //                                                                            //
 //----------------------------------------------------------------------------//
 
@@ -204,6 +212,15 @@ struct ratio_gcd :
 {
 };
 
+<<<<<<< HEAD
+=======
+    //----------------------------------------------------------------------------//
+    //                                                                            //
+    //                More arithmetic on ratio types [ratio.arithmetic]           //
+    //                                                                            //
+    //----------------------------------------------------------------------------//
+
+>>>>>>> develop
 #ifdef BOOST_RATIO_EXTENSIONS
 template <class R>
 struct ratio_negate
@@ -220,12 +237,72 @@ struct ratio_sign
     : mpl::sign_c<boost::intmax_t, R::num>
 {
 };
+<<<<<<< HEAD
+=======
+
+template <class R>
+struct ratio_inverse
+    : ratio<R::den, R::num>::type
+{
+};
+
+
+>>>>>>> develop
 template <class R1, class R2>
 struct ratio_lcm :
     ratio<mpl::lcm_c<boost::intmax_t, R1::num, R2::num>::value,
         mpl::gcd_c<boost::intmax_t, R1::den, R2::den>::value>::type
 {
 };
+<<<<<<< HEAD
+=======
+
+template <class R1, class R2>
+struct ratio_modulo :
+    ratio<(R1::num * R2::den) % (R2::num * R1::den), R1::den * R2::den>::type
+{
+};
+
+namespace detail {
+  template <class R1, class R2, bool r1ltr2>
+  struct ratio_min : R1 {};
+  template <class R1, class R2>
+  struct ratio_min<R1,R2,false> : R2 {};
+
+  template <class R1, class R2, bool r1ltr2>
+  struct ratio_max : R2 {};
+  template <class R1, class R2>
+  struct ratio_max<R1,R2,false> : R1 {};
+}
+
+template <class R1, class R2>
+struct ratio_min : detail::ratio_min<R1, R2, ratio_less<R1,R2>::value>::type
+{
+};
+
+template <class R1, class R2>
+struct ratio_max : detail::ratio_max<R1, R2, ratio_less<R1,R2>::value>::type
+{
+};
+
+template<typename R, int p>
+struct ratio_power :
+  ratio_multiply<
+    typename ratio_power<R, p%2>::type,
+    typename ratio_power<typename ratio_multiply<R, R>::type, p/2>::type
+  >::type
+{};
+
+template<typename R>
+struct ratio_power<R, 0> : ratio<1>::type {};
+
+template<typename R>
+struct ratio_power<R, 1> : R {};
+
+template<typename R>
+struct ratio_power<R, -1> : ratio_divide<ratio<1>, R>::type {};
+
+>>>>>>> develop
 #endif
 }  // namespace boost
 
