@@ -9,11 +9,7 @@
 
 [library Boost.Ratio
     [quickbook 1.5]
-<<<<<<< HEAD
-    [version 2.0.0]
-=======
     [version 2.1.0]
->>>>>>> develop
     [authors [Hinnant, Howard]]
     [authors [Dawes, Beman]]
     [authors [Botet Escriba, Vicente J.]]
@@ -61,10 +57,7 @@
 [def __ratio_subtract [link ratio.reference.std.ratio_hpp.ratio_arithmetic `ratio_subtract`]]
 [def __ratio_multiply [link ratio.reference.std.ratio_hpp.ratio_arithmetic `ratio_multiply`]]
 [def __ratio_divide [link ratio.reference.std.ratio_hpp.ratio_arithmetic `ratio_divide`]]
-<<<<<<< HEAD
-=======
 [def __ratio_power [link ratio.reference.std.ratio_hpp.ratio_arithmetic `ratio_power`]]
->>>>>>> develop
 [def __ratio_negate [link ratio.reference.std.ratio_hpp.ratio_arithmetic `ratio_negate`]]
 [def __ratio_abs [link ratio.reference.std.ratio_hpp.ratio_arithmetic `ratio_abs`]]
 [def __ratio_sign [link ratio.reference.std.ratio_hpp.ratio_arithmetic `ratio_sign`]]
@@ -99,8 +92,6 @@
 [def __peta [link ratio.reference.std.ratio_hpp.ratio_si_typedefs `peta`]]
 [def __exa [link ratio.reference.std.ratio_hpp.ratio_si_typedefs `exa`]]
 
-<<<<<<< HEAD
-=======
 [def __kibi [link ratio.reference.std.ratio_hpp.ratio_iec_typedefs `kibi`]]
 [def __mebi [link ratio.reference.std.ratio_hpp.ratio_iec_typedefs `mebi`]]
 [def __gibi [link ratio.reference.std.ratio_hpp.ratio_iec_typedefs `gibi`]]
@@ -108,7 +99,6 @@
 [def __pebi [link ratio.reference.std.ratio_hpp.ratio_iec_typedefs `pebi`]]
 [def __exbi [link ratio.reference.std.ratio_hpp.ratio_iec_typedefs `exbi`]]
 
->>>>>>> develop
 [template mu[]'''&#x3BC;'''] [/ µ Greek small letter mu]
 
 [def __Rational_Constant [link ratio.reference.mpl.rational_constant Rational Constant]]
@@ -261,40 +251,6 @@ __Boost_Ratio should work with an C++03 conforming compiler.  The current versio
 Windows with
 
 * MSVC 10.0
-<<<<<<< HEAD
-* MSVC 9.0 Express
-* MSVC 8.0
-
-Cygwin 1.5 with
-
-* GCC 3.4.4
-
-Cygwin 1.7 with
-
-* GCC 4.3.4
-
-MinGW with
-
-* GCC 4.4.0
-* GCC 4.5.0
-* GCC 4.5.0 -std=c++0x
-* GCC 4.6.0
-* GCC 4.6.0 -std=c++0x
-
-Ubuntu 10.10
-
-* GCC 4.4.5
-* GCC 4.4.5 -std=c++0x
-* GCC 4.5.1
-* GCC 4.5.1 -std=c++0x
-* clang 2.8
-
-Initial versions were tested on:
-
-MacOS with GCC 4.2.4
-
-Ubuntu Linux with GCC 4.2.4
-=======
 
 MinGW with
 
@@ -335,7 +291,6 @@ OsX with
 * clang 3.2
 * clang 3.2 -std=c++11
 * clang 3.2 -std=c++11 -stdlib=libc++
->>>>>>> develop
 
 [note Please let us know how this works on other platforms/compilers.]
 
@@ -664,11 +619,7 @@ Finally, we can exercise what we've created, even using custom time durations (`
         return 0;
     }
 
-<<<<<<< HEAD
-['See the source file [@../../example/si_physics.cpp example/si_physics.cpp]]
-=======
 ['See the source file [@boost:libs/ratio/example/si_physics.cpp example/si_physics.cpp]]
->>>>>>> develop
 
 [endsect]
 
@@ -801,20 +752,14 @@ This header provides forward declarations for the `<boost/ratio/ratio.hpp>` file
         template <class R1, class R2> struct __ratio_subtract;
         template <class R1, class R2> struct __ratio_multiply;
         template <class R1, class R2> struct __ratio_divide;
-<<<<<<< HEAD
-=======
     #ifdef BOOST_RATIO_EXTENSIONS
         template <class R,int P> struct __ratio_power;
->>>>>>> develop
         template <class R> struct __ratio_negate;
         template <class R> struct __ratio_sign;
         template <class R> struct __ratio_abs;
         template <class R1, class R2> struct __ratio_gcd;
         template <class R1, class R2> struct __ratio_lcm;
-<<<<<<< HEAD
-=======
     #endif
->>>>>>> develop
 
         // ratio comparison
         template <class R1, class R2> struct __ratio_equal;
@@ -841,8 +786,6 @@ This header provides forward declarations for the `<boost/ratio/ratio.hpp>` file
         typedef ratio<      1000000000000LL, 1LL> __tera;
         typedef ratio<   1000000000000000LL, 1LL> __peta;
         typedef ratio<1000000000000000000LL, 1LL> __exa;
-<<<<<<< HEAD
-=======
 
     #ifdef BOOST_RATIO_EXTENSIONS
         // convenience IEC typedefs
@@ -853,7 +796,6 @@ This header provides forward declarations for the `<boost/ratio/ratio.hpp>` file
         typedef ratio<       1024LL*1024LL*1024LL*1024LL*1024LL> __pebi;
         typedef ratio<1024LL*1024LL*1024LL*1024LL*1024LL*1024LL> __exbi;
     #endif
->>>>>>> develop
     }
 
 [endsect]
@@ -1000,10 +942,6 @@ The nested typedef `type` is a synonym for `__ratio<R1::num * R2::num, R1::den *
 
 The nested typedef `type` is a synonym for `__ratio<R1::num * R2::den, R2::num * R1::den>::type`.
 
-<<<<<<< HEAD
-[heading `ratio_negate<>`]
-
-=======
 [heading `ratio_power<>`]
 
 Included only if __BOOST_RATIO_EXTENSIONS is defined.
@@ -1018,7 +956,6 @@ The nested typedef `type` is a synonym for `R* *R` P times.
 
 Included only if __BOOST_RATIO_EXTENSIONS is defined.
 
->>>>>>> develop
 This extension of the C++ standard helps in the definition of some [*Boost.MPL] numeric metafunctions.
 
 
@@ -1030,11 +967,8 @@ The nested typedef `type` is a synonym for `__ratio<-R::num, R::den>::type`.
 
 [heading `ratio_abs<>`]
 
-<<<<<<< HEAD
-=======
 Included only if __BOOST_RATIO_EXTENSIONS is defined.
 
->>>>>>> develop
 This extension of the C++ standard helps in the definition of some [*Boost.MPL] numeric metafunctions.
 
         template <class R> struct ratio_abs {
@@ -1045,11 +979,8 @@ The nested typedef `type` is a synonym for `__ratio<abs_c<intmax_t,R::num>::valu
 
 [heading `ratio_sign<>`]
 
-<<<<<<< HEAD
-=======
 Included only if __BOOST_RATIO_EXTENSIONS is defined.
 
->>>>>>> develop
 This extension of the C++ standard helps in the definition of some [*Boost.MPL] numeric metafunctions.
 
         template <class R> struct ratio_sign {
@@ -1060,11 +991,8 @@ The nested typedef `type` is a synonym for `sign_c<intmax_t,R::num>::type`.
 
 [heading `ratio_gcd<>`]
 
-<<<<<<< HEAD
-=======
 Included only if __BOOST_RATIO_EXTENSIONS is defined.
 
->>>>>>> develop
 This extension of the C++ standard helps in the definition of some [*Boost.MPL] numeric metafunctions.
 
         template <class R1, class R2> struct ratio_gcd {
@@ -1075,11 +1003,8 @@ The nested typedef `type` is a synonym for `ratio<gcd_c<intmax_t, R1::num, R2::n
 
 [heading `ratio_lcm<>`]
 
-<<<<<<< HEAD
-=======
 Included only if __BOOST_RATIO_EXTENSIONS is defined.
 
->>>>>>> develop
 This extension of the C++ standard helps in the definition of some [*Boost.MPL] numeric metafunctions.
 
         template <class R1, class R2> struct ratio_lcm {
@@ -1154,8 +1079,6 @@ The [@http://en.wikipedia.org/wiki/SI_prefix#List_of_SI_prefixes International S
 
 [endsect]
 
-<<<<<<< HEAD
-=======
 [section:ratio_iec_typedefs IEC typedefs]
 
 Included only if __BOOST_RATIO_EXTENSIONS is defined.
@@ -1173,7 +1096,6 @@ The [@http://http://en.wikipedia.org/wiki/Binary_prefix#Specific_units_of_IEC_60
 [endsect]
 
 
->>>>>>> develop
 
 [section:limitations Limitations]
 
@@ -1287,8 +1209,6 @@ This header provides `ratio_string<>` which can generate a textual representatio
         template <> struct ratio_string<exa, char16_t>;
         template <> struct ratio_string<exa, char32_t>;
         template <> struct ratio_string<exa, wchar_t>;
-<<<<<<< HEAD
-=======
 
         template <> struct ratio_string<kibi, char>;
         template <> struct ratio_string<kibi, char16_t>;
@@ -1320,7 +1240,6 @@ This header provides `ratio_string<>` which can generate a textual representatio
         template <> struct ratio_string<yobi, char32_t>;
         template <> struct ratio_string<yobi, wchar_t>;
 
->>>>>>> develop
     }
 
 [section:ratio_string Template Class `ratio_string<>`]
@@ -1383,13 +1302,10 @@ The primary template provides generic strings. Specializations provide the same 
 
 [section:spe Specializations for `ratio_string<>`]
 
-<<<<<<< HEAD
-=======
 
 With compilers supporting char16_t and char32_t and with a standard library don't providing std::u16string and std::u32string you will need to 
 define the macros BOOST_NO_CXX11_U16STRING and BOOST_NO_CXX11_U32STRING until Boost.Config defines them.
 
->>>>>>> develop
 For each specialization the table gives the return value for `prefix()` and `symbol()`. 
 
 [table The return values of specializations of ratio_string
@@ -2034,8 +1950,6 @@ The specialization relays on the __ratio_greater_equal template class.
 [section:history Appendix A: History]
 [/==================================]
 
-<<<<<<< HEAD
-=======
 [section [*Version 2.1.0, Febreary 1, 2014 - 1.56] ]
 
 [*New Features:]
@@ -2052,7 +1966,6 @@ The specialization relays on the __ratio_greater_equal template class.
 
 [endsect]
 
->>>>>>> develop
 [section [*Version 2.0.0, November 1, 2012 - 1.52] ]
 
 [*Features:]
@@ -2063,13 +1976,10 @@ The specialization relays on the __ratio_greater_equal template class.
 
 The ratio_string<>::short_name and ratio_string<>::long_name are deprecated. Use ratio_string<>::symbol and ratio_string<>::prefix respectively. These functions be removed in 1.55.
 
-<<<<<<< HEAD
-=======
 [*Fixes:]
 
 * [@http://svn.boost.org/trac/boost/ticket/7478 #7478] Compiles fails with compilers supporting char16_t and char32_t fails if the library doesn't provides std::u16string and std::u32string.
 
->>>>>>> develop
 [endsect]
 
 [section [*Version 1.0.3, August 1, 2012 - 1.51] ]
@@ -2195,11 +2105,7 @@ Dividing by gcd(d1,d2) on both num and den
                      ((d1 * d2) / gcd(d1,d2))  
 
 
-<<<<<<< HEAD
-Multipliying and diving by gcd(n1,n2) in numerator
-=======
 Multiplying and diving by gcd(n1,n2) in numerator
->>>>>>> develop
 
       ( ((gcd(n1,n2)*(n1/gcd(n1,n2))) * (d2/gcd(d1,d2)))  + 
         ((gcd(n1,n2)*(n2/gcd(n1,n2))) * (d1/gcd(d1,d2))) 

@@ -1040,8 +1040,6 @@ struct ratio_string<exa, wchar_t>
 #endif
 #endif
 
-<<<<<<< HEAD
-=======
 #ifdef BOOST_RATIO_EXTENSIONS
 
 #ifdef BOOST_RATIO_HAS_STATIC_STRING
@@ -1344,7 +1342,6 @@ struct ratio_string<exbi, wchar_t>
 #endif
 #endif
 #endif
->>>>>>> develop
 }
 
 #endif  // BOOST_RATIO_RATIO_IO_HPP

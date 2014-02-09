@@ -45,10 +45,7 @@ struct ratio_string
 #include <sstream>
 
 #ifdef BOOST_RATIO_HAS_STATIC_STRING
-<<<<<<< HEAD
-=======
 #error
->>>>>>> develop
 #include <boost/ratio/ratio_static_string.hpp>
 #include <boost/static_string/static_string.hpp>
 #endif
@@ -822,8 +819,6 @@ struct ratio_string<exa, wchar_t>
 #endif
 #endif
 
-<<<<<<< HEAD
-=======
 
 #ifdef BOOST_RATIO_EXTENSIONS
 
@@ -1080,7 +1075,6 @@ struct ratio_string<exbi, wchar_t>
 #endif
 #endif
 
->>>>>>> develop
 }
 
 #endif  // BOOST_RATIO_PROVIDES_DEPRECATED_FEATURES_SINCE_V2_0_0
