@@ -23,10 +23,11 @@ target_link_libraries( boost_ratio
         Boost::static_assert
         Boost::type_traits
 
-#		NOTE: dependency on rational is only needed when
-#       BOOST_RATIO_EXTENSIONS is defined.
+# NOTE: As of Boost 1.70, the dependency on rational is only
+#       necessary, if BOOST_RATIO_EXTENSIONS is defined.
 #       Maybe consuming libraries that do so should add
-#       Boost::rational as a dependency themselves
+#       Boost::rational as a dependency themselves,
+#       instead of doing it here for everyone?
         Boost::rational
 )
 
