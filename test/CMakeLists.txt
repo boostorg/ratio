@@ -21,7 +21,7 @@ foreach( file IN LISTS test_files )
     else()
         # most tests are compile only, so we just need to create a object file
         # in order to see, if it compiles
-        add_library( ${test_name} OBJECT ${file})
+        add_library( ${test_name} STATIC ${file})
     endif()
 
     target_link_libraries( ${test_name} PUBLIC
