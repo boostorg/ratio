@@ -15,27 +15,25 @@ project(boost LANGUAGES CXX)
 # - require some additional (internal or external) dependencies
 #
 # Those libraries can be excluded here
-set(BOOST_MAIN_IGNORE_LIBS callable_traits;hof;compute;gil;hana;yap;safe_numerics;beast CACHE STRING "List of libraries that will be excluded from cmake build")
+set(BOOST_RATIO_IGNORE_LIBS callable_traits;hof;compute;gil;hana;yap;safe_numerics;beast CACHE STRING "List of libraries that will be excluded from cmake build")
 
 
 #~~~ options ~~~
-message(STATUS "[Boost] Excluded libs (BOOST_MAIN_IGNORE_LIBS): ${BOOST_MAIN_IGNORE_LIBS}")
+message(STATUS "[Boost] Excluded libs (BOOST_RATIO_IGNORE_LIBS): ${BOOST_RATIO_IGNORE_LIBS}")
 
 # cmake doesn't require autolinking and currently most cmake files don't produce
 # name mangled libraries anyway
-message(STATUS "[Boost] Deactivating boost auto linking mechanism (-DBOOST_ALL_NO_LIB)")
 add_definitions(-DBOOST_ALL_NO_LIB)
 enable_testing()
 
 # Detect and process all CMakeLists files that reside in the root folder of a library
-file(GLOB boost_libs_with_cmake_files ../../../*/CMakeLists.txt)
+file(GLOB boost_libs_with_cmake_files ../../../../libs/*/CMakeLists.txt)
 
 foreach(cmake_file IN LISTS boost_libs_with_cmake_files)
 
     get_filename_component(dir ${cmake_file} DIRECTORY)
     get_filename_component(lib_name ${dir} NAME)
-	message(${dir})
-    if(NOT lib_name IN_LIST BOOST_MAIN_IGNORE_LIBS)
+    if(NOT lib_name IN_LIST BOOST_RATIO_IGNORE_LIBS)
         add_subdirectory(${dir} ${lib_name})
     endif()
 

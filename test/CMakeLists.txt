@@ -19,7 +19,7 @@ foreach( file IN LISTS test_files )
         add_executable( ${test_name} ${file} )
         add_test( NAME ${test_name} COMMAND ${test_name} )
     else()
-        # most tests are compile only, so we just need to create a object file
+        # most tests are compile only, so we just need to create an object file
         # in order to see, if it compiles
         add_library( ${test_name} STATIC ${file})
     endif()
