@@ -39,3 +39,8 @@ build: off
 
 test_script:
   - b2 libs/ratio/test toolset=%TOOLSET%
+  - mkdir __wsl__
+  - cd __wsl__
+  - cmake -DBOOST_RATIO_INCLUDE_TESTS=ON ../libs/ratio/test/test_cmake
+  - cmake --build .
+  - ctest .
