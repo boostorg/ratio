@@ -313,6 +313,10 @@ script:
   - |-
     echo "using $TOOLSET : : $COMPILER : <cxxflags>-std=$CXXSTD ;" > ~/user-config.jam
   - ./b2 libs/ratio/test toolset=$TOOLSET
+  - mkdir __wsl__ && cd __wsl__
+  - cmake -DBOOST_RATIO_INCLUDE_TESTS=ON ../libs/ratio/test/test_cmake
+  - cmake --build .
+  - ctest .
 
 notifications:
   email:
