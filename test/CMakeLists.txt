@@ -6,9 +6,11 @@
 #       and this file runs only a subset of the unit tests
 #       (in particular none of the fail tests)
 
+
+## unit tests
+
 # list of tests that contain a main function
 set( exec_test_files ratio_ext_pass;ratio_io_pass;ratio_pass )
-
 file( GLOB_RECURSE test_files *_pass.cpp )
 foreach( file IN LISTS test_files )
 
@@ -29,3 +31,19 @@ foreach( file IN LISTS test_files )
     )
 
 endforeach()
+
+## examples
+file( GLOB_RECURSE test_files ../example/*.cpp )
+foreach( file IN LISTS test_files )
+
+    get_filename_component( core_name ${file} NAME_WE )
+    set( test_name test_boost_ratio_${core_name} )
+
+    add_executable( ${test_name} ${file} )
+    target_link_libraries( ${test_name} PUBLIC
+        Boost::ratio
+    )
+    add_test( NAME ${test_name} COMMAND ${test_name} )
+
+endforeach()
+
