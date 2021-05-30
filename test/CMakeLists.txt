@@ -15,7 +15,7 @@ file( GLOB_RECURSE test_files *_pass.cpp )
 foreach( file IN LISTS test_files )
 
     get_filename_component( core_name ${file} NAME_WE )
-    set( test_name test_boost_ratio_${core_name} )
+    set( test_name boost_ratio-test-${core_name} )
 
     if( ${core_name} IN_LIST exec_test_files )
         add_executable( ${test_name} ${file} )
@@ -37,11 +37,11 @@ file( GLOB_RECURSE test_files ../example/*.cpp )
 foreach( file IN LISTS test_files )
 
     get_filename_component( core_name ${file} NAME_WE )
-    set( test_name test_boost_ratio_${core_name} )
+    set( test_name boost_ratio-example-${core_name} )
 
     add_executable( ${test_name} ${file} )
     target_link_libraries( ${test_name} PUBLIC
-        Boost::ratio
+        Boost::ratio Boost::chrono
     )
     add_test( NAME ${test_name} COMMAND ${test_name} )
 
