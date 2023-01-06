@@ -23,7 +23,7 @@ project
         #<include>$(BOOST_ROOT)
         # uncomment the line above if you build outside the Boost release
         #<include>../../..
-        <toolset>msvc:<asynch-exceptions>on
+        #<toolset>msvc:<asynch-exceptions>on
         <define>BOOST_ENABLE_WARNINGS
         <define>BOOST_RATIO_USES_MPL_ASSERT
         <define>BOOST_RATIO_VERSION=2
@@ -31,18 +31,10 @@ project
         #<toolset>sun:<define>BOOST_COMMON_TYPE_DONT_USE_TYPEOF
         #<toolset>sun:<define>BOOST_TYPEOF_EMULATION
         <toolset>sun:<define>__typeof__=__typeof__ 
-        <warnings>all
-        <toolset>gcc:<cxxflags>-Wextra
+        <warnings>pedantic
         <toolset>gcc:<cxxflags>-Wno-long-long
-        <toolset>gcc:<cxxflags>-pedantic
-        <toolset>darwin:<cxxflags>-Wextra
         <toolset>darwin:<cxxflags>-Wno-long-long
-        <toolset>darwin:<cxxflags>-pedantic
-        #<toolset>pathscale:<cxxflags>-Wextra
         <toolset>pathscale:<cxxflags>-Wno-long-long
-        <toolset>pathscale:<cxxflags>-pedantic
-        <toolset>clang:<cxxflags>-Wextra
-        <toolset>clang:<cxxflags>-pedantic
         <toolset>clang:<cxxflags>-Wno-long-long
         #<toolset>gcc-mingw-4.5.0:<cxxflags>-Wno-missing-field-initializers
         #<toolset>gcc-mingw-4.5.0:<cxxflags>-fdiagnostics-show-option
