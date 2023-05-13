@@ -678,6 +678,9 @@ Finally, we can exercise what we've created, even using custom time durations (`
 
 When __BOOST_RATIO_EXTENSIONS is defined, __Boost_Ratio provides in addition some extension to the C++ standard, see below.
 
+[note Support for `BOOST_RATIO_EXTENSIONS` is deprecated and will eventually be removed when Boost.Ratio is
+implemented in terms of the standard C++11 `<ratio>` header.]
+
 [endsect]
 [section:deprecated Deprecated]
 
