@@ -41,6 +41,7 @@ time2_demo contained this comment:
 
 #include <boost/mpl/logical.hpp>
 #include <boost/ratio/ratio.hpp>
+#include <boost/ratio/detail/is_ratio.hpp>
 #include <boost/type_traits/common_type.hpp>
 #include <boost/type_traits/is_convertible.hpp>
 #include <boost/type_traits/is_floating_point.hpp>
@@ -450,7 +451,7 @@ namespace chrono {
     class duration
     {
     BOOST_EX_CHRONO_STATIC_ASSERT(!boost_ex::chrono::detail::is_duration<Rep>::value, BOOST_EX_CHRONO_A_DURATION_REPRESENTATION_CAN_NOT_BE_A_DURATION, ());
-    //BOOST_EX_CHRONO_STATIC_ASSERT(boost::ratio_detail::is_ratio<Period>::value, BOOST_EX_CHRONO_SECOND_TEMPLATE_PARAMETER_OF_DURATION_MUST_BE_A_STD_RATIO, ());
+    BOOST_EX_CHRONO_STATIC_ASSERT(boost::ratio_detail::is_ratio<Period>::value, BOOST_EX_CHRONO_SECOND_TEMPLATE_PARAMETER_OF_DURATION_MUST_BE_A_STD_RATIO, ());
     BOOST_EX_CHRONO_STATIC_ASSERT(Period::num>0, BOOST_EX_CHRONO_DURATION_PERIOD_MUST_BE_POSITIVE, ());
     public:
         typedef Rep rep;

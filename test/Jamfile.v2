@@ -55,6 +55,7 @@ compile ratio_comparison/ratio_greater_equal_pass.cpp ;
 
 run ratio_detail/is_evenly_divisible_by.cpp ;
 run ratio_detail/gcd_lcm.cpp ;
+run ratio_detail/is_ratio.cpp ;
 
 # test-suite "examples"
 
