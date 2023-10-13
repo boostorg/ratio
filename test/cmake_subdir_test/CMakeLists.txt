@@ -10,23 +10,7 @@ add_subdirectory(../.. boostorg/ratio)
 
 set(deps
 # Primary dependencies
-
-config
-core
-integer
-mpl
-rational
-static_assert
-type_traits
-
 # Secondary dependencies
-
-assert
-throw_exception
-predef
-preprocessor
-utility
-io
 )
 
 foreach(dep IN LISTS deps)
@@ -36,7 +20,7 @@ foreach(dep IN LISTS deps)
 endforeach()
 
 add_executable(quick ../quick.cpp)
-target_link_libraries(quick Boost::ratio Boost::core)
+target_link_libraries(quick Boost::ratio)
 
 enable_testing()
 add_test(quick quick)
