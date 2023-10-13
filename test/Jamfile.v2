@@ -34,6 +34,7 @@ compile ratio_arithmetic/ratio_add_pass.cpp ;
 compile ratio_arithmetic/ratio_subtract_pass.cpp ;
 compile ratio_arithmetic/ratio_multiply_pass.cpp ;
 compile ratio_arithmetic/ratio_divide_pass.cpp ;
+compile ratio_arithmetic/ratio_gcd_pass.cpp ;
 compile-fail ratio_arithmetic/ratio_add_fail.cpp ;
 compile-fail ratio_arithmetic/ratio_add_2_fail.cpp ;
 #compile-fail ratio_arithmetic/ratio_add_3_fail.cpp ;

@@ -33,20 +33,17 @@ time2_demo contained this comment:
 #define BOOST_RATIO_RATIO_HPP
 
 #include <boost/ratio/ratio_fwd.hpp>
+#include <boost/ratio/detail/gcd_lcm.hpp>
 
 namespace boost
 {
 
-/*
-template <class R1, class R2>
-struct ratio_gcd :
-    ratio<mpl::gcd_c<boost::intmax_t, R1::num, R2::num>::value,
-        mpl::lcm_c<boost::intmax_t, R1::den, R2::den>::value>::type
+template <class R1, class R2> struct ratio_gcd: ratio<
+    ratio_detail::gcd<R1::num, R2::num>::value,
+    ratio_detail::lcm<R1::den, R2::den>::value>::type
 {
 };
-*/
 
 }  // namespace boost
-
 
 #endif  // BOOST_RATIO_RATIO_HPP
