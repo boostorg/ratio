@@ -50,6 +50,10 @@ compile ratio_comparison/ratio_less_equal_pass.cpp ;
 compile ratio_comparison/ratio_greater_pass.cpp ;
 compile ratio_comparison/ratio_greater_equal_pass.cpp ;
 
+# test-suite "ratio_detail"
+
+run ratio_detail/is_evenly_divisible_by.cpp ;
+
 # test-suite "examples"
 
 run ../example/si_physics.cpp ;
