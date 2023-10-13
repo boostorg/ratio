@@ -11,4 +11,8 @@
 
 // This header is no longer useful and is only retained for compatibility
 
+#include <cstdint>
+
+#define BOOST_RATIO_INTMAX_C INTMAX_C
+
 #endif  // #ifndef BOOST_RATIO_CONFIG_HPP
