@@ -38,11 +38,11 @@ time2_demo contained this comment:
 namespace boost
 {
 
-template <class R1, class R2> struct ratio_gcd: ratio<
+// extension used by Chrono
+
+template <class R1, class R2> using ratio_gcd = typename ratio<
     ratio_detail::gcd<R1::num, R2::num>::value,
-    ratio_detail::lcm<R1::den, R2::den>::value>::type
-{
-};
+    ratio_detail::lcm<R1::den, R2::den>::value>::type;
 
 }  // namespace boost
 

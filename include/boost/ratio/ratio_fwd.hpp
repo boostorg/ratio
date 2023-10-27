@@ -52,10 +52,6 @@ using std::ratio_subtract;
 using std::ratio_multiply;
 using std::ratio_divide;
 
-// extension used by Chrono
-template <class R1, class R2> struct ratio_gcd;
-// template <class R1, class R2> struct ratio_lcm;
-
 // ratio comparison
 using std::ratio_equal;
 using std::ratio_not_equal;
