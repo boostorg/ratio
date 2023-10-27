@@ -116,17 +116,20 @@ jobs:
           - toolset: clang
             compiler: clang++-13
             cxxstd: "11,14,17,20,2b"
-            os: ubuntu-22.04
+            os: ubuntu-latest
+            container: ubuntu:22.04
             install: clang-13
           - toolset: clang
             compiler: clang++-14
             cxxstd: "11,14,17,20,2b"
-            os: ubuntu-22.04
+            os: ubuntu-latest
+            container: ubuntu:22.04
             install: clang-14
           - toolset: clang
             compiler: clang++-15
             cxxstd: "11,14,17,20,2b"
-            os: ubuntu-22.04
+            os: ubuntu-latest
+            container: ubuntu:22.04
             install: clang-15
           - toolset: clang
             compiler: clang++-16
