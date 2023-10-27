@@ -15,13 +15,14 @@ branches:
 environment:
   matrix:
     - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
-      TOOLSET: msvc-9.0,msvc-10.0,msvc-11.0
-      ADDRMD: 32
-    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
-      TOOLSET: msvc-12.0,msvc-14.0
+      TOOLSET: msvc-14.0
       ADDRMD: 32,64
     - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-      TOOLSET: msvc-14.1,clang-win
+      TOOLSET: msvc-14.1
+      CXXSTD: 14,17,latest
+      ADDRMD: 32,64
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+      TOOLSET: clang-win
       CXXSTD: 14,17,latest
       ADDRMD: 32,64
     - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
@@ -37,7 +38,7 @@ install:
   - cd boost-root
   - git submodule update --init tools/boostdep
   - xcopy /s /e /q %APPVEYOR_BUILD_FOLDER% libs\ratio\
-  - python tools/boostdep/depinst/depinst.py ratio
+  - python tools/boostdep/depinst/depinst.py -I example ratio
   - cmd /c bootstrap
   - b2 -d0 headers
 
