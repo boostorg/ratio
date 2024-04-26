@@ -14,7 +14,7 @@ project
         <warnings>pedantic
         <library>/boost/config//boost_config
         <library>/boost/core//boost_core
-v    ;
+    ;
 
 # test-suite "ratio_ratio"
 
