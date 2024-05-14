@@ -14,6 +14,7 @@ project
         <warnings>pedantic
         <library>/boost/config//boost_config
         <library>/boost/core//boost_core
+        <library>/boost/integer//boost_integer
         <library>/boost/mpl//boost_mpl
     ;
 
